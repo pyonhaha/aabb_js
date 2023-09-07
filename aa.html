@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Get point</title>
+</head>
+
+<body>
+    <div id='score_board1'></div>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+</body>
+
+<script>
+    window.onload = function() {
+        let plus_minus_list = ["AA", "BB", "CC"];
+        let score_board1_txt = "";
+        for (let ii = 0; ii < 3; ii++) {
+            score_board1_txt = score_board1_txt + '<tr>\
+                <td style="font-size: 18pt;">' + plus_minus_list[ii] + '</td>\
+                <td><button id="minus_' + String(ii + 1) + '" type="button" class="btn btn-outline-danger">-</button></td>\
+                <td><input disabled id="score_' + String(ii + 1) + '" class="form-control form-control-lg mb-3" type="number" style="font-weight: bold;" value="0"></td>\
+                <td><button id="plus_' + String(ii + 1) + '" type="button" class="btn btn-outline-primary">+</button></td>\
+            </tr>'
+        }
+        $("#score_board1").html(score_board1_txt)
+    }
+</script>
+<script>
+    $(document).ready(function() {
+        $("button").on('click', function() {
+            console.log(this.id)
+        })
+    })
+</script>
+<!-- <script defer>
+    $("button").on('click', function() {
+        console.log(this.id)
+    })
+</script> -->
+
+</html>
